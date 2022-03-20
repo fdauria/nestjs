@@ -27,7 +27,6 @@ export class UsersController {
 
   @Get('/:id')
   findUser(@Param('id') id: string) {
-    console.log('handler is running');
     const user = this.usersService.findOne(parseInt(id));
     if (!user) throw new NotFoundException('user not found');
 
